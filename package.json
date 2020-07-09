@@ -17,7 +17,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0"
+    "babel-preset-expo": "~8.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-handlebarlabs": "^0.0.6",
+    "prettier": "^2.0.5"
   },
   "private": true
 }
