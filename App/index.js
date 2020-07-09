@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     position: 'absolute',
-    width: maxWidth * 0.07,
+    width: maxWidth * 0.06,
     height: maxHeight * 0.05,
     opacity: 0.5,
     margin: maxWidth * 0.01
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: maxWidth * 0.03,
     flexDirection: 'row',
     width: maxWidth,
+    justifyContent: 'space-between'
   },
   sortOptions: {
     flexDirection: 'row',
@@ -143,9 +144,17 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     margin: maxWidth * 0.01
   },
+  viewOptions: {
+
+  },
+  viewOptionImage: {
+    width: maxWidth * 0.05, 
+    height: maxHeight * 0.02
+  },
   postsContainer: {
     width: maxWidth, 
     height: maxHeight * 0.6,
+    backgroundColor: '#ddd',
     alignItems: "center", 
     justifyContent: 'center'
   }
@@ -190,7 +199,7 @@ export default function Index() {
               <Image style={styles.dropDownIcon} source={Images.dropDown} />
             </View>
             <View style={styles.viewOptions}>
-              
+              <Image style={styles.viewOptionImage} source={Images.classicView} resizeMode="contain" />
             </View>
           </View>
         </View>
