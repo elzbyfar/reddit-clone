@@ -3,6 +3,7 @@ const Images = {
   arrowDown: require('./arrow-down-icon.png'),
   comment: require('./comment-icon.png'),
   controversial: require('./controversial-icon.png'),
+  dropDown: require('./drop-down-icon.png'),
   hot: require('./hot-icon.png'),
   new: require('./new-icon.png'),
   headerBackground: require('./reddit-header-background.jpg'),
