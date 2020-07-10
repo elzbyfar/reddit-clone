@@ -11,7 +11,7 @@ const MainContainer = () => {
   const [ searchValue, setSearchValue ] = useState("pics")
 
   return (
-    <View style={styles.container}>
+    <View style={styles.mainContainer}>
       <StatusBar style="light" />
       <HeaderContainer 
         searchValue={searchValue}

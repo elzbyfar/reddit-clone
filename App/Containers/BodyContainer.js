@@ -5,10 +5,10 @@ import styles from '../Styles/BodyStyles';
 import SubRedditInfoContainer from './SubRedditInfoContainer';
 import PostsContainer from './PostsContainer'
 
-const BodyContainer = () => {
+const BodyContainer = (props) => {
 	return (
   <View style={styles.bodyContainer}>
-    <SubRedditInfoContainer />
+    <SubRedditInfoContainer searchValue={props.searchValue} />
     <PostsContainer />
   </View>
 	);

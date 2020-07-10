@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
   sortBy: {
     fontSize: 10,
     letterSpacing: 0.01,
-    color: '#111'
+    color: '#111', 
+    fontWeight: '900'
   },
   dropDownIcon: {
     width: Sizes.maxWidth * 0.022,
