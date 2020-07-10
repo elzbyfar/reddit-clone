@@ -87,7 +87,8 @@ const styles = StyleSheet.create({
   },
   viewOptionImage: {
     width: Sizes.maxWidth * 0.05, 
-    height: Sizes.maxHeight * 0.02
+    height: Sizes.maxHeight * 0.02,
+    opacity: 0.8
   },
 })
 

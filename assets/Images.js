@@ -3,6 +3,7 @@
 const Images = {
   arrowUp: require('./arrow-up-icon.png'),
   arrowDown: require('./arrow-down-icon.png'),
+  award: require('./award-icon.png'),
   cardView: require('./card-view-icon.png'),
   classicView: require('./classic-view-icon.png'),
   comment: require('./comment-icon.png'),
@@ -15,6 +16,7 @@ const Images = {
   redditLogo: require('./reddit-logo.png'),
   rising: require('./rising-icon.png'),
   search: require('./search-icon.png'),
+  share: require('./share-icon.png'),
   top: require('./top-icon.png')
 }
 

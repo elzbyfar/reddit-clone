@@ -11,12 +11,15 @@ const styles = StyleSheet.create({
   }, 
   listPost: {
     width: Sizes.maxWidth, 
-    height: Sizes.maxHeight * 0.17,
+    // height: Sizes.maxHeight * 0.19,
+    // height: Sizes.maxHeight * 0.18,
+    // maxHeight: Sizes.maxHeight * 0.2,
     backgroundColor: "#fff",
-    paddingHorizontal: Sizes.maxWidth * 0.02, 
+    paddingHorizontal: Sizes.maxWidth * 0.03, 
     paddingVertical: Sizes.maxHeight * 0.01, 
     borderBottomColor: "#eee", 
     borderBottomWidth: 1.5, 
+    flexDirection: 'column',
     justifyContent: 'space-between'
   }, 
   userAndTimeContainer: {
@@ -27,13 +30,27 @@ const styles = StyleSheet.create({
   userNameAndTime: {
     color: "#777",
     fontSize: 12,
-  }, 
+  },
   listImage: {
-    borderWidth: 1,
-    borderColor: '#555',
-    width: Sizes.maxWidth * 0.2, 
-    height: Sizes.maxHeight * 0.1,
-    marginRight: Sizes.maxWidth * 0.05
+    overflow: 'hidden',
+    width: Sizes.maxWidth * 0.23, 
+    height: Sizes.maxHeight * 0.08,
+    borderRadius: 5,
+    marginRight: Sizes.maxWidth * 0.055
+  },
+  postTitleContainer: {
+    width: Sizes.maxWidth, 
+    paddingVertical: 8,
+    justifyContent: 'space-between',
+    flexDirection: 'row'
+  },
+  postTitle: {
+    width: Sizes.maxWidth * 0.6, 
+  },
+  listPostBottomControls: {
+    flexDirection: 'row', 
+    width: Sizes.maxWidth * 0.95, 
+    justifyContent: 'space-between'
   },
   votesContainer: {
     flexDirection: 'row',
@@ -41,14 +58,61 @@ const styles = StyleSheet.create({
   },
   upsCount: {
     fontSize: 11, 
-    fontWeight: '200', 
+    fontWeight: '600',
+    color: '#777', 
     marginRight: 3,
     marginLeft: 5,
+  },
+  upsCountSelected: {
+    color: '#e8571a'
+  },
+  downCountSelected: {
+    color: '#6f51f0'
   },
   arrow: {
     width: Sizes.maxWidth * 0.04,
     height: Sizes.maxHeight * 0.015, 
+    tintColor: "#8b8c8f",
+  },
+  arrowUpVote: {
+    tintColor: '#e8571a',
+  },
+  arrowDownVote: {
+    tintColor: '#6f51f0'
+  },
+  commentsContainer: {
+    flexDirection: 'row'
+  },
+  commentIcon: {
+    width: Sizes.maxWidth * 0.035,
+    height: Sizes.maxHeight * 0.015, 
     opacity: 0.6
+  }, 
+  commentCount: {
+    marginLeft: 7,
+    fontSize: 11, 
+    fontWeight: '600',
+    color: '#777', 
+  },
+  shareContainer: {
+    flexDirection: 'row'
+  },
+  shareIcon: {
+    width: Sizes.maxWidth * 0.035,
+    height: Sizes.maxHeight * 0.015, 
+    opacity: 0.6
+  }, 
+  shareText: {
+    marginLeft: 6,
+    fontSize: 11, 
+    fontWeight: '600',
+    color: '#777', 
+  },
+  awardIcon: {
+    width: Sizes.maxWidth * 0.045,
+    height: Sizes.maxHeight * 0.018, 
+    opacity: 0.6
+
   }
 })
 
