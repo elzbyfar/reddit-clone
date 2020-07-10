@@ -25,7 +25,15 @@ const PostsContainer = () => {
           <View style={styles.listPost} key={post.data.id}>
             <View style={styles.userAndTimeContainer}>
               <Text style={styles.userNameAndTime}>{`u/${post.data.author} • 115d`}</Text>
-              <Image style={styles.listImage} source={post.data.thumbnail} resizeMode="contain" />
+              <Image style={styles.listImage} source={Images.hot} resizeMode="contain" />
+            </View>
+            <View></View>
+            <View style={styles.listPostBottomControlls}>
+              <View style={styles.votesContainer}>
+                <Image style={styles.arrow} source={Images.arrowUp} resizeMode="contain" />
+                <Text style={styles.upsCount}>{post.data.ups > 1000 ? `${(post.data.ups / 1000).toFixed(1)}k` : post.data.ups}</Text>
+                <Image style={styles.arrow} source={Images.arrowDown} resizeMode="contain" />
+              </View>
             </View>
           </View>
 )

@@ -1,3 +1,5 @@
+
+
 const Images = {
   arrowUp: require('./arrow-up-icon.png'),
   arrowDown: require('./arrow-down-icon.png'),

@@ -16,18 +16,39 @@ const styles = StyleSheet.create({
     paddingHorizontal: Sizes.maxWidth * 0.02, 
     paddingVertical: Sizes.maxHeight * 0.01, 
     borderBottomColor: "#eee", 
-    borderBottomWidth: 1.5
+    borderBottomWidth: 1.5, 
+    justifyContent: 'space-between'
   }, 
   userAndTimeContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: Sizes.maxWidth
   }, 
   userNameAndTime: {
     color: "#777",
     fontSize: 12,
   }, 
-  listImages: {
+  listImage: {
+    borderWidth: 1,
+    borderColor: '#555',
     width: Sizes.maxWidth * 0.2, 
-    height: Sizes.maxHeight * 0.1
+    height: Sizes.maxHeight * 0.1,
+    marginRight: Sizes.maxWidth * 0.05
+  },
+  votesContainer: {
+    flexDirection: 'row',
+    alignContent: 'center', 
+  },
+  upsCount: {
+    fontSize: 11, 
+    fontWeight: '200', 
+    marginRight: 3,
+    marginLeft: 5,
+  },
+  arrow: {
+    width: Sizes.maxWidth * 0.04,
+    height: Sizes.maxHeight * 0.015, 
+    opacity: 0.6
   }
 })
 
