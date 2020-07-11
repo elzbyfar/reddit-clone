@@ -3,11 +3,12 @@ import Sizes from '../Helpers/Sizes'
 
 const styles = StyleSheet.create({
   headerContainer: {
+    zIndex: 1,
     width: Sizes.maxWidth, 
     height: Sizes.maxHeight * 0.17,
     borderBottomColor: "#bbb", 
     borderBottomWidth: 0.3,
-    backgroundColor: "#000",    
+    backgroundColor: "#0377fc",    
   },
   headerPhoto: {
     width: Sizes.maxWidth, 
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     display: 'flex', 
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: Sizes.maxHeight * 0.07
+    marginTop: Sizes.maxHeight * 0.06
   },
   searchBar: {
     textAlign: 'center',
@@ -36,15 +37,31 @@ const styles = StyleSheet.create({
   searchIcon: {
     position: 'absolute',
     width: Sizes.maxWidth * 0.06,
-    height: Sizes.maxHeight * 0.05,
+    height: Sizes.maxHeight * 0.028,
     opacity: 0.5,
     margin: Sizes.maxWidth * 0.01
   }, 
+  backArrowContainer: {
+    position: 'absolute',
+    paddingTop: Sizes.maxHeight * 0.125,
+    paddingLeft: Sizes.maxWidth * 0.045,
+    zIndex: 2
+  },
+  backArrow: {
+    width: Sizes.maxWidth * 0.05, 
+    height: Sizes.maxHeight * 0.02,
+    opacity: 0.8
+  },
+  logoContainer: {
+    alignSelf: 'center',
+    width: Sizes.maxWidth * 0.2,
+    height: Sizes.maxHeight * 0.091
+  },
   logo: {
     alignSelf: 'center',
-    marginTop: Sizes.maxHeight * 0.02,
+    marginTop: Sizes.maxHeight * 0.03,
     width: Sizes.maxWidth * 0.2,
-    height: Sizes.maxHeight * 0.08
+    height: Sizes.maxHeight * 0.091
   },
 }) 
 

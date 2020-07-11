@@ -8,8 +8,8 @@ class JSONAPIAdapter {
     };
   }
 
-  async redditPosts() {
-    const response = await fetch(`${this.baseURL}`)
+  async redditPosts(search, sortByValue) {
+    const response = await fetch(`${this.baseURL}/${search}/${sortByValue.toLowerCase()}.json`)
     const result = await response.json();
     return result
   }

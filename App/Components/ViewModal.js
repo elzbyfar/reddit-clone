@@ -1,33 +1,66 @@
 import React from 'react';
-import { WebView, Modal, Share, View, Text, TouchableOpacity } from 'react-native';
-import {Container, Header, Content, Body, Left, Icon, Right, Title, Button } from 'native-base'
+import { Modal, Image, View, Text, TouchableOpacity } from 'react-native';
 
 import styles from '../Styles/ViewModalStyles';
+import Images from '../../assets/Images';
 
 const ViewModal = (props) => {
 
-  const [ isLoading, setIsLoading ] = useState(true)
-  // const []
-
   return (
     <Modal 
-      style={styles.viewModalContainer}
       animationType="slide"
       transparent
-      // visible={}
+      onRequestClose={() => props.setViewModal(false)}
     >
-      <View>
-        <Text>Card</Text>
-      </View>
-      <View>
-        <Text>Classic</Text>
-      </View>
-      <View>
-        <Text>Media Gallery</Text>
-      </View>
-      <View>
-        <Text>Close</Text>
-      </View>
+      <TouchableOpacity 
+        activeOpacity={1} 
+        onPress={() => props.setViewModal(false)} 
+        style={styles.viewModalContainer}
+      >
+        <View style={styles.viewModal}>
+          <TouchableOpacity 
+            activeOpacity={1}
+            onPress={() => {
+            props.setViewMode('Card')
+            props.setViewModal(false)
+          }}
+            style={props.viewMode === 'Card' ? [styles.viewOption, styles.viewOptionSelected] : styles.viewOption}
+          >
+            <Image style={styles.viewOptionImage} source={Images.cardView} resizeMode="cover" />
+            <Text style={styles.viewOptionText}>Card</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            activeOpacity={1}
+            onPress={() => {
+            props.setViewMode('Classic')
+            props.setViewModal(false)
+            }}
+            style={props.viewMode === 'Classic' ? [styles.viewOption, styles.viewOptionSelected] : styles.viewOption}
+          >
+            <Image style={styles.viewOptionImage} source={Images.classicView} resizeMode="cover" />
+            <Text style={styles.viewOptionText}>Classic</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            activeOpacity={1}
+            onPress={() => {
+            props.setViewMode('Media Gallery')
+            props.setViewModal(false)
+            }}
+            style={props.viewMode === 'Media Gallery' ? [styles.viewOption, styles.viewOptionSelected] : styles.viewOption}
+          >
+            <Image style={styles.viewOptionImage} source={Images.galleryView} resizeMode="cover" />
+            <Text style={styles.viewOptionText}>Media Gallery</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            activeOpacity={1} 
+            onPress={() => props.setViewModal(false)} 
+            style={styles.viewModalCloseButton}
+          >
+            <Text style={styles.viewModalCloseButtonText}>Close</Text>
+          </TouchableOpacity>
+        </View>
+      </TouchableOpacity>
+
     </Modal>
   )
 }

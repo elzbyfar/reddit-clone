@@ -9,11 +9,13 @@ const styles = StyleSheet.create({
     alignItems: "center", 
     justifyContent: 'center'
   }, 
+  galleryContainer: {
+    width: Sizes.maxWidth,
+    flexDirection: 'row', 
+    flexWrap: 'wrap',
+  },
   listPost: {
     width: Sizes.maxWidth, 
-    // height: Sizes.maxHeight * 0.19,
-    // height: Sizes.maxHeight * 0.18,
-    // maxHeight: Sizes.maxHeight * 0.2,
     backgroundColor: "#fff",
     paddingHorizontal: Sizes.maxWidth * 0.03, 
     paddingVertical: Sizes.maxHeight * 0.01, 
@@ -38,14 +40,43 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginRight: Sizes.maxWidth * 0.055
   },
-  postTitleContainer: {
+  cardImage: {
+    overflow: 'hidden',
+    width: Sizes.maxWidth,
+    height: Sizes.maxWidth,
+    marginLeft: -Sizes.maxWidth * 0.031
+  },
+  galleryImageBox: {
+    flex: 1,
+    width: Sizes.maxWidth, 
+    height: Sizes.maxHeight * 0.25,
+    marginVertical: 3,
+  },
+  galleryImage: {
+    marginVertical: 3,
+    width: Sizes.maxWidth, 
+    height: Sizes.maxHeight * 0.25,
+  },
+  postTitleContainerForClassic: {
     width: Sizes.maxWidth, 
     paddingVertical: 8,
     justifyContent: 'space-between',
     flexDirection: 'row'
   },
-  postTitle: {
-    width: Sizes.maxWidth * 0.6, 
+  postTitleContainerForCard: {
+    width: Sizes.maxWidth, 
+    paddingVertical: 10,
+    flexDirection: 'column'
+  },
+  postTitleForClassic: {
+    width: Sizes.maxWidth * 0.67, 
+  },
+  postTitleForCard: {
+    width: Sizes.maxWidth,
+    paddingRight: Sizes.maxWidth * 0.05,
+    fontSize: 18,
+    fontWeight: '500',
+    paddingBottom: 8
   },
   listPostBottomControls: {
     flexDirection: 'row', 
@@ -104,7 +135,7 @@ const styles = StyleSheet.create({
   }, 
   shareText: {
     marginLeft: 6,
-    fontSize: 11, 
+    fontSize: 12, 
     fontWeight: '600',
     color: '#777', 
   },

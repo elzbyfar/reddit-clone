@@ -4,6 +4,7 @@ const Images = {
   arrowUp: require('./arrow-up-icon.png'),
   arrowDown: require('./arrow-down-icon.png'),
   award: require('./award-icon.png'),
+  backArrow: require('./back-arrow.png'),
   cardView: require('./card-view-icon.png'),
   classicView: require('./classic-view-icon.png'),
   comment: require('./comment-icon.png'),
