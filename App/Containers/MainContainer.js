@@ -3,11 +3,11 @@ import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { WebView } from 'react-native-webview'
 
-import styles from '../Styles/MainStyles'
-import HeaderContainer from './HeaderContainer'
-import BodyContainer from './BodyContainer'
-import useRedditPosts from '../Helpers/useRedditPosts'
 import Sizes from '../Helpers/Sizes';
+import styles from '../Styles/MainStyles'
+import BodyContainer from './BodyContainer'
+import HeaderContainer from './HeaderContainer'
+import useRedditPosts from '../Helpers/useRedditPosts'
 
 const MainContainer = () => {
 

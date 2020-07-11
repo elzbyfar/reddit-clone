@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ImageBackground, Image, ScrollView, View, TouchableOpacity, Text } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { ImageBackground, RefreshControl, Image, ScrollView, View, TouchableOpacity, Text } from 'react-native';
 
 import styles from '../Styles/PostsStyles';
 import Images from '../../assets/Images';
@@ -9,9 +9,33 @@ const PostsContainer = (props) => {
 
   const [ upVoted, setUpVoted ] = useState([])
   const [ downVoted, setDownVoted ] = useState([])
+
+  const [ refreshing, setRefreshing ] = useState(false);
+
+  const wait = (timeout) => {
+
+    return new Promise(resolve => {
+      setTimeout(resolve, timeout)
+    })
+  }
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+
+    const redditPosts = props.redditPosts
+
+    wait(2000).then(() => setRefreshing(false)).then(() => {
+      return redditPosts
+    })
+  }, [])
+
   return (
     <View style={props.viewMode === 'Media Gallery' ? styles.galleryContainer : styles.postsContainer}>
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         {props.redditPosts.map((post, index) => {
         return (
           props.viewMode === 'Media Gallery' ? (

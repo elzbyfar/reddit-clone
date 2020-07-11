@@ -6,7 +6,6 @@ import SubRedditInfoContainer from './SubRedditInfoContainer';
 import PostsContainer from './PostsContainer'
 import SortModal from '../Components/SortModal';
 import ViewModal from '../Components/ViewModal';
-// import useRedditPosts from '../Helpers/useRedditPosts'
 
 const BodyContainer = (props) => {
 
