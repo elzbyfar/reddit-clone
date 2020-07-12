@@ -46,7 +46,7 @@ const PostControls = (props) => {
           />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={() => alert('COMMENTS')} style={styles.commentsContainer}>
+      <TouchableOpacity onPress={() => alert('Comments')} style={styles.commentsContainer}>
         <Image style={styles.commentIcon} source={comment} resizeMode="cover" />
         <Text style={styles.commentCount}>
           {props.post.commentCount > 1000 ? (
@@ -56,11 +56,11 @@ const PostControls = (props) => {
           )}
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => alert('SHARE')} style={styles.shareContainer}>
+      <TouchableOpacity onPress={() => alert('Share')} style={styles.shareContainer}>
         <Image style={styles.shareIcon} source={share} resizeMode="cover" />
         <Text style={styles.shareText}>Share</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => alert('AWARDS')}>
+      <TouchableOpacity onPress={() => alert('Awards')}>
         <Image style={styles.awardIcon} source={award} resizeMode="cover" />
       </TouchableOpacity>
     </View>

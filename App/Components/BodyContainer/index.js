@@ -19,6 +19,7 @@ const BodyContainer = (props) => {
       setSortModal={setSortModal} 
       viewModal={viewModal} 
       setViewModal={setViewModal} 
+      sortBy={props.sortBy}
       viewMode={props.viewMode}
       subscriberCount={props.subscriberCount} 
       searchValue={props.searchValue} 

@@ -29,6 +29,7 @@ const MainContainer = () => {
           setSearchValue={setSearchValue}
           sortBy={sortBy}
           setSortBy={setSortBy}
+          setViewMode={setViewMode}
           webView={webView}
           setWebView={setWebView}
         />

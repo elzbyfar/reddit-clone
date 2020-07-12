@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, View, TextInput, TouchableOpacity } from 'react-native';
 import styles from './styles'
 
@@ -9,15 +9,17 @@ import headerBackground from './assets/reddit-header-background.jpg'
 
 const HeaderContainer = (props) => {
 
+  const [ typing, setTyping ] = useState('pics')
+
   return (
     <View style={styles.headerContainer}>
       <Image style={styles.headerPhoto} source={headerBackground} />
       <View style={styles.searchBarContainer}>
         <TextInput 
           style={styles.searchBar}
-          onChangeText={text => props.setSearchValue(text)}
-          onSubmitEditing={() => props.searchInput()}
-          value={props.searchValue.toLowerCase()}
+          onChangeText={text => setTyping(text)}
+          onSubmitEditing={() => props.setSearchValue(typing.replace(' ', ''))}
+          value={typing.toLowerCase()}
         />
         <Image style={styles.searchIcon} source={searchIcon} resizeMode="cover" />
       </View>
@@ -34,7 +36,16 @@ const HeaderContainer = (props) => {
       </TouchableOpacity>
 )
         }
-      <TouchableOpacity style={styles.logoContainer} onPress={() => alert('Search Button!')}>
+      <TouchableOpacity 
+        activeOpacity={0.8}
+        style={styles.logoContainer} 
+        onPress={() => {
+          props.setWebView('')
+          props.setSearchValue(props.searchValue)
+          props.setSortBy('Hot')
+          props.setViewMode('Classic')
+        }}
+      >
         <Image style={styles.logo} source={redditLogo} resizeMode="contain" />
       </TouchableOpacity>
     </View>

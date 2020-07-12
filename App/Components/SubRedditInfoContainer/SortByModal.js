@@ -34,7 +34,7 @@ const SortByModal = (props) => {
             }}
             style={props.sortBy === 'Hot' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Hot} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Hot} resizeMode="contain" />
             <Text style={styles.sortByText}>Hot</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -45,7 +45,7 @@ const SortByModal = (props) => {
             }}
             style={props.sortBy === 'New' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={New} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={New} resizeMode="contain" />
             <Text style={styles.sortByText}>New</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -56,7 +56,7 @@ const SortByModal = (props) => {
             }}
             style={props.sortBy === 'Top' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Top} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Top} resizeMode="contain" />
             <Text style={styles.sortByText}>Top</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -67,7 +67,7 @@ const SortByModal = (props) => {
             }}
             style={props.sortBy === 'Controversial' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Controversial} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Controversial} resizeMode="contain" />
             <Text style={styles.sortByText}>Controversial</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -78,7 +78,7 @@ const SortByModal = (props) => {
             }}
             style={props.sortBy === 'Rising' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Rising} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Rising} resizeMode="contain" />
             <Text style={styles.sortByText}>Rising</Text>
           </TouchableOpacity>
           <TouchableOpacity  

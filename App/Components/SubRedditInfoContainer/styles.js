@@ -5,6 +5,8 @@ const styles = StyleSheet.create({
   subRedditInfoContainer: {
     width: Sizes.maxWidth, 
     height: Sizes.maxHeight * 0.23,
+    borderBottomColor: '#ddd',
+    borderBottomWidth: 0.5,
     flexDirection: 'column',
     alignItems: "center", 
     justifyContent: 'space-around'
@@ -46,18 +48,25 @@ const styles = StyleSheet.create({
   },
   subRedditStats: {
     fontSize: 12,
-    color: "#666",
-    textAlign: 'left'
+    color: "#777",
+    textAlign: 'center',
+    marginTop: Sizes.maxHeight * 0.008, 
+  },
+  subRedditHeadLine: {
+    fontWeight: '600',
+    textAlign:'center',
+    fontSize: 13,
+    color: '#222',
   },
   subRedditTagLine: {
-    fontSize: 12,
+    textAlign:'center',
+    fontSize: 11,
     color: '#222',
-    marginTop: Sizes.maxHeight * 0.005
   },
   sortOptionsContainer: {
     paddingHorizontal: Sizes.maxWidth * 0.03,
-    flexDirection: 'row',
     width: Sizes.maxWidth,
+    flexDirection: 'row',
     justifyContent: 'space-between'
   },
   sortOptions: {
@@ -65,8 +74,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   sortIcon: {
-    width: Sizes.maxWidth * 0.029,
-    height: Sizes.maxHeight * 0.017,
+    width: Sizes.maxWidth * 0.05,
+    height: Sizes.maxHeight * 0.02,
     opacity: 0.8,
     margin: Sizes.maxWidth * 0.01
   },
@@ -187,8 +196,8 @@ const styles = StyleSheet.create({
     opacity: 1
   }, 
   sortByImage: {
-    width: Sizes.maxWidth * 0.06,
-    height: Sizes.maxHeight * 0.03,
+    width: Sizes.maxWidth * 0.095,
+    height: Sizes.maxHeight * 0.038,
     marginHorizontal: 15
   }, 
   sortByText: {
