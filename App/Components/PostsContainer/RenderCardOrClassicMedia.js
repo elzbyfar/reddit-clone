@@ -15,10 +15,6 @@ const RenderCardOrClassicMedia = (props) => {
 			<PostControls
 				post={props.post}
 				index={props.index}
-				upVoted={props.upVoted}
-				downVoted={props.downVoted}
-				setUpVoted={props.setUpVoted}
-				setDownVoted={props.setDownVoted}
 			/>
 		</View>
 	);

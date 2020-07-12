@@ -19,10 +19,9 @@ const PostsContainer = (props) => {
 	const onRefresh = useCallback(() => {
 		setRefreshing(true);
 
-		const redditPosts = props.redditPosts;
-
 		wait(2000).then(() => setRefreshing(false)).then(() => {
-			return redditPosts;
+			const refreshSearch = props.setSearchValue(props.searchValue);
+			return refreshSearch;
 		});
 	}, []);
 
@@ -40,10 +39,6 @@ const PostsContainer = (props) => {
 								key={post.id}
 								post={post}
 								index={index}
-								upVoted={props.upVoted}
-								downVoted={props.downVoted}
-								setUpVoted={props.setUpVoted}
-								setDownVoted={props.setDownVoted}
 								viewMode={props.viewMode}
 								setWebView={props.setWebView}
 							/>;

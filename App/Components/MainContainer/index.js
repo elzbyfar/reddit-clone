@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { WebView } from 'react-native-webview'
 
-import Sizes from '../../Helpers/Sizes';
+import Size from '../../Helpers/Size';
 import styles from './styles'
 import BodyContainer from '../BodyContainer'
 import HeaderContainer from '../HeaderContainer'
@@ -15,8 +15,6 @@ const MainContainer = () => {
   const [ sortBy, setSortBy ] = useState('Hot')
   const [ viewMode, setViewMode ] = useState('Classic')
   const [ searchValue, setSearchValue ] = useState("pics")
-  const [ upVoted, setUpVoted ] = useState([]);
-	const [ downVoted, setDownVoted ] = useState([]);
 
   const {redditPosts, subscriberCount} = useRedditPosts(searchValue, sortBy)
  
@@ -45,16 +43,12 @@ const MainContainer = () => {
             subscriberCount={subscriberCount}
             webView={webView}
             setWebView={setWebView}
-            upVoted={upVoted}
-            downVoted={downVoted}
-            setUpVoted={setUpVoted}
-            setDownVoted={setDownVoted}
           />
           )
             : (
               <WebView 
                 source={{ uri: webView }}
-                style={{ height: Sizes.maxHeight, width: Sizes.maxWidth }}
+                style={{ height: Size.maxHeight, width: Size.maxWidth }}
               />
           )}
       </View>

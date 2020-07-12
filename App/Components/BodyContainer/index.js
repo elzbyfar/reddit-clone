@@ -15,24 +15,21 @@ const BodyContainer = (props) => {
 	return (
   <View style={styles.bodyContainer}>
     <SubRedditInfoContainer 
+      sortBy={props.sortBy}
       sortModal={sortModal} 
       setSortModal={setSortModal} 
+      viewMode={props.viewMode}
       viewModal={viewModal} 
       setViewModal={setViewModal} 
-      sortBy={props.sortBy}
-      viewMode={props.viewMode}
       subscriberCount={props.subscriberCount} 
       searchValue={props.searchValue} 
     />
     <PostsContainer 
       redditPosts={props.redditPosts} 
-      webView={props.webView}
+      searchValue={props.searchValue}
+      setSearchValue={props.setSearchValue}
       setWebView={props.setWebView}
       viewMode={props.viewMode}
-      upVoted={props.upVoted}
-      downVoted={props.downVoted}
-      setUpVoted={props.setUpVoted}
-      setDownVoted={props.setDownVoted}
     />
 
     {sortModal && (

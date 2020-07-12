@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
-import Sizes from '../../Helpers/Sizes'
+import Size from '../../Helpers/Size'
 
 const styles = StyleSheet.create({
   subRedditInfoContainer: {
-    width: Sizes.maxWidth, 
-    height: Sizes.maxHeight * 0.23,
+    width: Size.maxWidth, 
+    height: Size.maxHeight * 0.23,
     borderBottomColor: '#ddd',
     borderBottomWidth: 0.5,
     flexDirection: 'column',
@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   }, 
   subRedditTitleContainer: {
-    width: Sizes.maxWidth,
-    paddingHorizontal: Sizes.maxWidth * 0.05,
+    width: Size.maxWidth,
+    paddingHorizontal: Size.maxWidth * 0.05,
     display: 'flex', 
     flexDirection: 'row',
     justifyContent: 'space-between'
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   joinButton: {
     backgroundColor: '#022599',
-    width: Sizes.maxWidth * 0.15,
+    width: Size.maxWidth * 0.15,
     flexDirection: 'row',
     borderRadius: 25,
     alignItems: 'center',
@@ -38,19 +38,19 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '900',
     fontSize: 18,
-    marginBottom: Sizes.maxWidth * 0.006,
-    marginRight: Sizes.maxWidth * 0.006,
+    marginBottom: Size.maxWidth * 0.006,
+    marginRight: Size.maxWidth * 0.006,
   },
   subRedditStatsContainer: {
-    paddingHorizontal: Sizes.maxWidth * 0.05,
+    paddingHorizontal: Size.maxWidth * 0.05,
     flexDirection: 'column',
-    width: Sizes.maxWidth,
+    width: Size.maxWidth,
   },
   subRedditStats: {
     fontSize: 12,
     color: "#777",
     textAlign: 'center',
-    marginTop: Sizes.maxHeight * 0.008, 
+    marginTop: Size.maxHeight * 0.008, 
   },
   subRedditHeadLine: {
     fontWeight: '600',
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     color: '#222',
   },
   sortOptionsContainer: {
-    paddingHorizontal: Sizes.maxWidth * 0.03,
-    width: Sizes.maxWidth,
+    paddingHorizontal: Size.maxWidth * 0.03,
+    width: Size.maxWidth,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   sortIcon: {
-    width: Sizes.maxWidth * 0.05,
-    height: Sizes.maxHeight * 0.02,
+    width: Size.maxWidth * 0.05,
+    height: Size.maxHeight * 0.02,
     opacity: 0.8,
-    margin: Sizes.maxWidth * 0.01
+    margin: Size.maxWidth * 0.01
   },
   sortBy: {
     fontSize: 10,
@@ -86,17 +86,17 @@ const styles = StyleSheet.create({
     fontWeight: '900'
   },
   dropDownIcon: {
-    width: Sizes.maxWidth * 0.022,
-    height: Sizes.maxHeight * 0.008,
+    width: Size.maxWidth * 0.022,
+    height: Size.maxHeight * 0.008,
     opacity: 0.8,
-    margin: Sizes.maxWidth * 0.013
+    margin: Size.maxWidth * 0.013
   },
   viewOptions: {
 
   },
   viewOptionImage: {
-    width: Sizes.maxWidth * 0.05, 
-    height: Sizes.maxHeight * 0.02,
+    width: Size.maxWidth * 0.05, 
+    height: Size.maxHeight * 0.02,
     opacity: 0.8
   },
 
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     alignSelf: 'center',
     backgroundColor: '#00000095',
-    width: Sizes.maxWidth
+    width: Size.maxWidth
   }, 
   viewModal: {
     flexDirection: 'column',
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#fff',
     paddingVertical: 10,
-    width: Sizes.maxWidth * 0.95, 
-    height: Sizes.maxHeight * 0.3,
-    marginTop: Sizes.maxHeight * 0.67,
+    width: Size.maxWidth * 0.95, 
+    height: Size.maxHeight * 0.3,
+    marginTop: Size.maxHeight * 0.67,
     borderRadius: 15
   }, 
   viewOption: {
-    width: Sizes.maxWidth * 0.95, 
-    height: Sizes.maxHeight * 0.05,
+    width: Size.maxWidth * 0.95, 
+    height: Size.maxHeight * 0.05,
     alignItems: 'center',
     flexDirection: 'row', 
     marginLeft: 10,
@@ -133,16 +133,16 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   viewOptionImage: {
-    width: Sizes.maxWidth * 0.05, 
-    height: Sizes.maxHeight * 0.02,
+    width: Size.maxWidth * 0.05, 
+    height: Size.maxHeight * 0.02,
     marginHorizontal: 15,
   },
   viewOptionText: {
     fontWeight: '600'
   }, 
   viewModalCloseButton: {
-    width: Sizes.maxWidth * 0.90,
-    height: Sizes.maxHeight * 0.07,
+    width: Size.maxWidth * 0.90,
+    height: Size.maxHeight * 0.07,
     backgroundColor: '#ddd',
     borderRadius: 25,
     alignItems: 'center',
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     alignSelf: 'center',
     backgroundColor: '#00000095', 
-    width: Sizes.maxWidth
+    width: Size.maxWidth
   }, 
   sortByModal: {
     flexDirection: 'column',
@@ -169,14 +169,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#fff',
     paddingVertical: 10,
-    width: Sizes.maxWidth * 0.95, 
-    height: Sizes.maxHeight * 0.5,
-    marginTop: Sizes.maxHeight * 0.47,
+    width: Size.maxWidth * 0.95, 
+    height: Size.maxHeight * 0.5,
+    marginTop: Size.maxHeight * 0.47,
     borderRadius: 10
   },
   sortByHeaderView: {
-    width: Sizes.maxWidth * 0.9, 
-    height: Sizes.maxHeight * 0.035,
+    width: Size.maxWidth * 0.9, 
+    height: Size.maxHeight * 0.035,
     borderBottomWidth: 0.8,
     borderBottomColor: '#eee',
   }, 
@@ -185,8 +185,8 @@ const styles = StyleSheet.create({
     fontSize: 12
   }, 
   sortByOption: {
-    width: Sizes.maxWidth * 0.95, 
-    height: Sizes.maxHeight * 0.05,
+    width: Size.maxWidth * 0.95, 
+    height: Size.maxHeight * 0.05,
     alignItems: 'center',
     flexDirection: 'row', 
     marginLeft: 10,
@@ -196,16 +196,16 @@ const styles = StyleSheet.create({
     opacity: 1
   }, 
   sortByImage: {
-    width: Sizes.maxWidth * 0.095,
-    height: Sizes.maxHeight * 0.038,
+    width: Size.maxWidth * 0.095,
+    height: Size.maxHeight * 0.038,
     marginHorizontal: 15
   }, 
   sortByText: {
     fontWeight: '600'
   }, 
   sortByModalCloseButton: {
-    width: Sizes.maxWidth * 0.90,
-    height: Sizes.maxHeight * 0.07,
+    width: Size.maxWidth * 0.90,
+    height: Size.maxHeight * 0.07,
     backgroundColor: '#ddd',
     borderRadius: 25,
     alignItems: 'center',

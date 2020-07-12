@@ -1,70 +1,54 @@
-import React from 'react';
-import styles from './styles';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
+import formatVotesAndComments from '../../Helpers/formatVotesAndComments'
+import styles from './styles';
 
-import arrowDown from './assets/arrow-down-icon.png'
-import arrowUp from './assets/arrow-up-icon.png'
-import award from './assets/award-icon.png'
-import comment from './assets/comment-icon.png'
-import share from './assets/share-icon.png'
+import arrowDown from './assets/arrow-down-icon.png';
+import arrowUp from './assets/arrow-up-icon.png';
+import award from './assets/award-icon.png';
+import comment from './assets/comment-icon.png';
+import share from './assets/share-icon.png';
 
 const PostControls = (props) => {
-  return (
-    <View style={styles.postControls}>
-      <View style={styles.votesContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            props.setUpVoted([ ...props.upVoted, props.index ]);
-            props.downVoted.includes(props.index) && props.downVoted.splice(props.downVoted.indexOf(props.index), 1);
-          }}
-        >
-          <Image
-            style={props.upVoted.includes(props.index) ? [ styles.arrow, styles.arrowUpVote ] : styles.arrow}
-            source={arrowUp}
-            resizeMode="cover"
-          />
-        </TouchableOpacity>
-        <Text
-          style={
-            (props.upVoted.includes(props.index) && [ styles.upsCount, styles.upsCountSelected ]) ||
-            (props.downVoted.includes(props.index) && [ styles.upsCount, styles.downCountSelected ]) ||
-            (!props.upVoted.includes(props.index) && !props.downVoted.includes(props.index) && styles.upsCount)
-          }
-        >
-          {props.post.upVotes > 1000 ? `${(props.post.upVotes / 1000).toFixed(1)}k` : props.post.upVotes}
-        </Text>
-        <TouchableOpacity
-          onPress={() => {
-            props.setDownVoted([ ...props.downVoted, props.index ]);
-            props.upVoted.includes(props.index) && props.upVoted.splice(props.upVoted.indexOf(props.index), 1);
-          }}
-        >
-          <Image
-            style={props.downVoted.includes(props.index) ? [ styles.arrow, styles.arrowDownVote ] : styles.arrow}
-            source={arrowDown}
-            resizeMode="cover"
-          />
-        </TouchableOpacity>
-      </View>
-      <TouchableOpacity onPress={() => alert('Comments')} style={styles.commentsContainer}>
-        <Image style={styles.commentIcon} source={comment} resizeMode="cover" />
-        <Text style={styles.commentCount}>
-          {props.post.commentCount > 1000 ? (
-            `${(props.post.commentCount / 1000).toFixed(1)}k`
-          ) : (
-            props.post.commentCount
-          )}
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => alert('Share')} style={styles.shareContainer}>
-        <Image style={styles.shareIcon} source={share} resizeMode="cover" />
-        <Text style={styles.shareText}>Share</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => alert('Awards')}>
-        <Image style={styles.awardIcon} source={award} resizeMode="cover" />
-      </TouchableOpacity>
-    </View>
-  );
+	const [ upVote, setUpVote ] = useState(false);
+	const [ downVote, setDownVote ] = useState(false);
+
+	const styleCount = () => {
+		if (upVote) { return [ styles.upsCount, styles.upsCountSelected ] }
+		if (downVote) { return [ styles.upsCount, styles.downCountSelected ] }
+		return styles.upsCount;
+	};
+
+	const styleArrow = (direction) => {
+		if (upVote && direction === 'up') { return [ styles.arrow, styles.arrowUpVote ] }
+		if (downVote && direction === 'down') { return [ styles.arrow, styles.arrowDownVote ] }
+		return styles.arrow;
+  };
+
+	return (
+		<View style={styles.postControls}>
+			<View style={styles.votesContainer}>
+				<TouchableOpacity onPress={() => {setUpVote(!upVote), setDownVote(false)}}>
+					<Image style={styleArrow('up')} source={arrowUp} resizeMode="cover" />
+				</TouchableOpacity>
+				<Text style={styleCount()}>{formatVotesAndComments(props.post.upVotes)}</Text>
+				<TouchableOpacity onPress={() => {setDownVote(!downVote), setUpVote(false)}}>
+					<Image style={styleArrow('down')} source={arrowDown} resizeMode="cover" />
+				</TouchableOpacity>
+			</View>
+			<TouchableOpacity onPress={() => alert('Comments')} style={styles.commentsContainer}>
+				<Image style={styles.commentIcon} source={comment} resizeMode="cover" />
+				<Text style={styles.commentCount}>{formatVotesAndComments(props.post.commentCount)}	</Text>
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => alert('Share')} style={styles.shareContainer}>
+				<Image style={styles.shareIcon} source={share} resizeMode="cover" />
+				<Text style={styles.shareText}>Share</Text>
+			</TouchableOpacity>
+			<TouchableOpacity onPress={() => alert('Awards')}>
+				<Image style={styles.awardIcon} source={award} resizeMode="cover" />
+			</TouchableOpacity>
+		</View>
+	);
 };
 
-export default PostControls
+export default PostControls;
