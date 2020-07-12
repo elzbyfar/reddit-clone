@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     paddingBottom: 8
   },
-  listPostBottomControls: {
+  postControls: {
     flexDirection: 'row', 
     width: Sizes.maxWidth * 0.95, 
     justifyContent: 'space-between'

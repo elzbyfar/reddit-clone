@@ -4,15 +4,13 @@ import styles from '../Styles/BodyStyles';
 
 import SubRedditInfoContainer from './SubRedditInfoContainer';
 import PostsContainer from './PostsContainer'
-import SortModal from '../Components/SortModal';
-import ViewModal from '../Components/ViewModal';
+import SortModal from './SortModal';
+import ViewModal from './ViewModal';
 
 const BodyContainer = (props) => {
 
   const [ sortModal, setSortModal ] = useState(false)
   const [ viewModal, setViewModal ] = useState(false)
-
-  const [ viewMode, setViewMode ] = useState('Classic')
 
 	return (
   <View style={styles.bodyContainer}>
@@ -21,6 +19,7 @@ const BodyContainer = (props) => {
       setSortModal={setSortModal} 
       viewModal={viewModal} 
       setViewModal={setViewModal} 
+      viewMode={props.viewMode}
       subscriberCount={props.subscriberCount} 
       searchValue={props.searchValue} 
     />
@@ -28,7 +27,11 @@ const BodyContainer = (props) => {
       redditPosts={props.redditPosts} 
       webView={props.webView}
       setWebView={props.setWebView}
-      viewMode={viewMode}
+      viewMode={props.viewMode}
+      upVoted={props.upVoted}
+      downVoted={props.downVoted}
+      setUpVoted={props.setUpVoted}
+      setDownVoted={props.setDownVoted}
     />
 
     {sortModal && (
@@ -42,8 +45,8 @@ const BodyContainer = (props) => {
 
     {viewModal && (
       <ViewModal 
-        viewMode={viewMode} 
-        setViewMode={setViewMode} 
+        viewMode={props.viewMode} 
+        setViewMode={props.setViewMode} 
         viewModal={viewModal} 
         setViewModal={setViewModal} 
       />

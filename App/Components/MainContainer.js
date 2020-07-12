@@ -11,9 +11,12 @@ import useRedditPosts from '../Helpers/useRedditPosts'
 
 const MainContainer = () => {
 
-  const [ searchValue, setSearchValue ] = useState("pics")
-  const [ sortBy, setSortBy ] = useState('Hot')
   const [ webView, setWebView ] = useState('')
+  const [ sortBy, setSortBy ] = useState('Hot')
+  const [ viewMode, setViewMode ] = useState('Classic')
+  const [ searchValue, setSearchValue ] = useState("pics")
+  const [ upVoted, setUpVoted ] = useState([]);
+	const [ downVoted, setDownVoted ] = useState([]);
 
   const {redditPosts, subscriberCount} = useRedditPosts(searchValue, sortBy)
  
@@ -35,10 +38,16 @@ const MainContainer = () => {
             setSearchValue={setSearchValue}
             sortBy={sortBy}
             setSortBy={setSortBy}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
             redditPosts={redditPosts}
             subscriberCount={subscriberCount}
             webView={webView}
             setWebView={setWebView}
+            upVoted={upVoted}
+            downVoted={downVoted}
+            setUpVoted={setUpVoted}
+            setDownVoted={setDownVoted}
           />
           )
             : (

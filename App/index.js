@@ -1,5 +1,5 @@
 import React from 'react';
-import MainContainer from './Containers/MainContainer'
+import MainContainer from './Components/MainContainer'
 
 export default function Index() {
   return (

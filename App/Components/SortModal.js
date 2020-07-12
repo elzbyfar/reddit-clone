@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Image, View, Text, TouchableOpacity } from 'react-native';
 
 import styles from '../Styles/SortModalStyles';
-import Images from '../../assets/Images';
+import Images from '../Helpers/Images';
 
 const SortModal = (props) => {
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, View, TouchableOpacity, Text } from 'react-native';
 
 import styles from '../Styles/SubRedditInfoStyles';
-import Images from '../../assets/Images';
+import Images from '../Helpers/Images';
 
 const SubRedditInfoContainer = (props) => {
 
@@ -29,7 +29,7 @@ const SubRedditInfoContainer = (props) => {
           <Image style={styles.dropDownIcon} source={Images.dropDown} resizeMode="cover" />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => props.setViewModal(!props.viewModal)} style={styles.viewOptions}>
-          <Image style={styles.viewOptionImage} source={Images.classicView} resizeMode="cover" />
+          <Image style={styles.viewOptionImage} source={(props.viewMode === 'Card' && Images.cardView) || (props.viewMode === 'Classic' && Images.classicView) || (props.viewMode === 'Media Gallery' && Images.galleryView)} resizeMode="cover" />
         </TouchableOpacity>
       </View>
     </View>

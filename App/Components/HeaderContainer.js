@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, View, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../Styles/HeaderStyles'
-import Images from '../../assets/Images'
+import Images from '../Helpers/Images';
 
 const HeaderContainer = (props) => {
 
