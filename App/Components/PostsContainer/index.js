@@ -1,14 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import { View, RefreshControl, ScrollView } from 'react-native';
 
-import styles from '../Styles/PostsStyles';
+import styles from './styles';
 
-import RenderGalleryMedia from '../Components/RenderGalleryMedia';
-import RenderCardOrClassicMedia from '../Components/RenderCardOrClassicMedia';
+import RenderGalleryMedia from './RenderGalleryMedia';
+import RenderCardOrClassicMedia from './RenderCardOrClassicMedia';
 
 const PostsContainer = (props) => {
 	
-
 	const [ refreshing, setRefreshing ] = useState(false);
 
 	const wait = (timeout) => {
@@ -33,12 +32,12 @@ const PostsContainer = (props) => {
 				{props.redditPosts.map((post, index) => {
 					return props.viewMode === 'Media Gallery'
 						? <RenderGalleryMedia 
-								key={post.data.id}
+								key={post.id}
 								post={post}
 								setWebView={props.setWebView}
 							/>
 						: <RenderCardOrClassicMedia 
-								key={post.data.id}
+								key={post.id}
 								post={post}
 								index={index}
 								upVoted={props.upVoted}

@@ -1,7 +1,12 @@
 import React from 'react';
-import Images from '../Helpers/Images';
-import styles from '../Styles/PostsStyles';
+import styles from './styles';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
+
+import arrowDown from './assets/arrow-down-icon.png'
+import arrowUp from './assets/arrow-up-icon.png'
+import award from './assets/award-icon.png'
+import comment from './assets/comment-icon.png'
+import share from './assets/share-icon.png'
 
 const PostControls = (props) => {
   return (
@@ -15,7 +20,7 @@ const PostControls = (props) => {
         >
           <Image
             style={props.upVoted.includes(props.index) ? [ styles.arrow, styles.arrowUpVote ] : styles.arrow}
-            source={Images.arrowUp}
+            source={arrowUp}
             resizeMode="cover"
           />
         </TouchableOpacity>
@@ -26,7 +31,7 @@ const PostControls = (props) => {
             (!props.upVoted.includes(props.index) && !props.downVoted.includes(props.index) && styles.upsCount)
           }
         >
-          {props.post.data.ups > 1000 ? `${(props.post.data.ups / 1000).toFixed(1)}k` : props.post.data.ups}
+          {props.post.upVotes > 1000 ? `${(props.post.upVotes / 1000).toFixed(1)}k` : props.post.upVotes}
         </Text>
         <TouchableOpacity
           onPress={() => {
@@ -36,27 +41,27 @@ const PostControls = (props) => {
         >
           <Image
             style={props.downVoted.includes(props.index) ? [ styles.arrow, styles.arrowDownVote ] : styles.arrow}
-            source={Images.arrowDown}
+            source={arrowDown}
             resizeMode="cover"
           />
         </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={() => alert('COMMENTS')} style={styles.commentsContainer}>
-        <Image style={styles.commentIcon} source={Images.comment} resizeMode="cover" />
+        <Image style={styles.commentIcon} source={comment} resizeMode="cover" />
         <Text style={styles.commentCount}>
-          {props.post.data.num_comments > 1000 ? (
-            `${(props.post.data.num_comments / 1000).toFixed(1)}k`
+          {props.post.commentCount > 1000 ? (
+            `${(props.post.commentCount / 1000).toFixed(1)}k`
           ) : (
-            props.post.data.num_comments
+            props.post.commentCount
           )}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => alert('SHARE')} style={styles.shareContainer}>
-        <Image style={styles.shareIcon} source={Images.share} resizeMode="cover" />
+        <Image style={styles.shareIcon} source={share} resizeMode="cover" />
         <Text style={styles.shareText}>Share</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => alert('AWARDS')}>
-        <Image style={styles.awardIcon} source={Images.award} resizeMode="cover" />
+        <Image style={styles.awardIcon} source={award} resizeMode="cover" />
       </TouchableOpacity>
     </View>
   );

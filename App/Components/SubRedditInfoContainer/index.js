@@ -1,8 +1,13 @@
 import React from 'react';
 import { Image, View, TouchableOpacity, Text } from 'react-native';
 
-import styles from '../Styles/SubRedditInfoStyles';
-import Images from '../Helpers/Images';
+import styles from './styles';
+
+import Hot from './assets/hot-icon.png'
+import cardView from './assets/card-view-icon.png'
+import dropDown from './assets/drop-down-icon.png'
+import galleryView from './assets/gallery-view-icon.png'
+import classicView from './assets/classic-view-icon.png'
 
 const SubRedditInfoContainer = (props) => {
 
@@ -24,12 +29,12 @@ const SubRedditInfoContainer = (props) => {
       </View>
       <View style={styles.sortOptionsContainer}>
         <TouchableOpacity onPress={() => props.setSortModal(!props.sortModal)} style={styles.sortOptions}>
-          <Image style={styles.sortIcon} source={Images.hot} resizeMode="cover" />
+          <Image style={styles.sortIcon} source={Hot} resizeMode="cover" />
           <Text style={styles.sortBy}>HOT POSTS</Text>
-          <Image style={styles.dropDownIcon} source={Images.dropDown} resizeMode="cover" />
+          <Image style={styles.dropDownIcon} source={dropDown} resizeMode="cover" />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => props.setViewModal(!props.viewModal)} style={styles.viewOptions}>
-          <Image style={styles.viewOptionImage} source={(props.viewMode === 'Card' && Images.cardView) || (props.viewMode === 'Classic' && Images.classicView) || (props.viewMode === 'Media Gallery' && Images.galleryView)} resizeMode="cover" />
+          <Image style={styles.viewOptionImage} source={(props.viewMode === 'Card' && cardView) || (props.viewMode === 'Classic' && classicView) || (props.viewMode === 'Media Gallery' && galleryView)} resizeMode="cover" />
         </TouchableOpacity>
       </View>
     </View>

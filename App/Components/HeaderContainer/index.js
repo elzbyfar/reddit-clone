@@ -1,13 +1,17 @@
 import React from 'react'
 import { Image, View, TextInput, TouchableOpacity } from 'react-native';
-import styles from '../Styles/HeaderStyles'
-import Images from '../Helpers/Images';
+import styles from './styles'
+
+import backArrow from './assets/back-arrow.png'
+import searchIcon from './assets/search-icon.png'
+import redditLogo from './assets/reddit-logo.png'
+import headerBackground from './assets/reddit-header-background.jpg'
 
 const HeaderContainer = (props) => {
 
   return (
     <View style={styles.headerContainer}>
-      <Image style={styles.headerPhoto} source={Images.headerBackground} />
+      <Image style={styles.headerPhoto} source={headerBackground} />
       <View style={styles.searchBarContainer}>
         <TextInput 
           style={styles.searchBar}
@@ -15,7 +19,7 @@ const HeaderContainer = (props) => {
           onSubmitEditing={() => props.searchInput()}
           value={props.searchValue.toLowerCase()}
         />
-        <Image style={styles.searchIcon} source={Images.search} resizeMode="cover" />
+        <Image style={styles.searchIcon} source={searchIcon} resizeMode="cover" />
       </View>
       {props.webView !== '' && (
       <TouchableOpacity
@@ -24,14 +28,14 @@ const HeaderContainer = (props) => {
       >
         <Image 
           style={styles.backArrow} 
-          source={Images.backArrow} 
+          source={backArrow} 
           resizeMode="cover"
         />
       </TouchableOpacity>
 )
         }
       <TouchableOpacity style={styles.logoContainer} onPress={() => alert('Search Button!')}>
-        <Image style={styles.logo} source={Images.redditLogo} resizeMode="contain" />
+        <Image style={styles.logo} source={redditLogo} resizeMode="contain" />
       </TouchableOpacity>
     </View>
   )

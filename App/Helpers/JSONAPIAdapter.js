@@ -14,7 +14,6 @@ class JSONAPIAdapter {
     return result
   }
 
-
 }
 
 export default JSONAPIAdapter

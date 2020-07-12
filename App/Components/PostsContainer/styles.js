@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import Sizes from '../Helpers/Sizes'
+import Sizes from '../../Helpers/Sizes'
 
 const styles = StyleSheet.create({
   postsContainer: {

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import Sizes from '../Helpers/Sizes'
+import Sizes from '../../Helpers/Sizes'
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -25,21 +25,21 @@ const styles = StyleSheet.create({
   },
   searchBar: {
     textAlign: 'center',
-    borderWidth: 0.4,
-    borderColor: '#bbb',
-    backgroundColor: '#eee',
-    color: '#000',
-    opacity: 0.7,
     width: Sizes.maxWidth * 0.9,
     height: Sizes.maxHeight * 0.04,
-    borderRadius: 5
+    backgroundColor: '#eee',
+    borderRadius: 5,
+    borderWidth: 0.4,
+    borderColor: '#bbb',
+    color: '#000',
+    opacity: 0.7,
   },
   searchIcon: {
     position: 'absolute',
     width: Sizes.maxWidth * 0.06,
     height: Sizes.maxHeight * 0.028,
+    margin: Sizes.maxWidth * 0.01,
     opacity: 0.5,
-    margin: Sizes.maxWidth * 0.01
   }, 
   backArrowContainer: {
     position: 'absolute',

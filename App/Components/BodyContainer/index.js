@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import styles from '../Styles/BodyStyles';
+import styles from './styles';
 
-import SubRedditInfoContainer from './SubRedditInfoContainer';
-import PostsContainer from './PostsContainer'
-import SortModal from './SortModal';
-import ViewModal from './ViewModal';
+import SubRedditInfoContainer from '../SubRedditInfoContainer';
+import PostsContainer from '../PostsContainer'
+import SortByModal from '../SubRedditInfoContainer/SortByModal';
+import ViewModal from '../SubRedditInfoContainer/ViewModal';
 
 const BodyContainer = (props) => {
 
@@ -35,7 +35,7 @@ const BodyContainer = (props) => {
     />
 
     {sortModal && (
-      <SortModal 
+      <SortByModal 
         sortBy={props.sortBy} 
         setSortBy={props.setSortBy} 
         sortModal={sortModal} 

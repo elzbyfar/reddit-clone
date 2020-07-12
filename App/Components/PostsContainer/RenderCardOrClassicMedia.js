@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../Styles/PostsStyles';
-import PostBody from '../Components/PostBody'
-import PostControls from '../Components/PostControls';
-import timeConverter from '../Helpers/timeConverter';
+import styles from './styles';
+import PostBody from './PostBody'
+import PostControls from './PostControls';
+import timeConverter from '../../Helpers/timeConverter';
 import { View, Text } from 'react-native';
 
 const RenderCardOrClassicMedia = (props) => {
@@ -10,8 +10,8 @@ const RenderCardOrClassicMedia = (props) => {
 	return (
 		<View style={styles.listPost}>
 			<View style={styles.userAndTimeContainer}>
-				<Text style={styles.userNameAndTime}>{`u/${props.post.data.author} • ${timeConverter(
-					props.post.data.created_utc
+				<Text style={styles.userNameAndTime}>{`u/${props.post.author} • ${timeConverter(
+					props.post.createdAt
 				)}`}</Text>
 			</View>
 			<PostBody 

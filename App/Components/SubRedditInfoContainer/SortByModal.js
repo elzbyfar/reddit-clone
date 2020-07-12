@@ -1,10 +1,15 @@
 import React from 'react';
 import { Modal, Image, View, Text, TouchableOpacity } from 'react-native';
 
-import styles from '../Styles/SortModalStyles';
-import Images from '../Helpers/Images';
+import styles from './styles';
 
-const SortModal = (props) => {
+import Hot from './assets/hot-icon.png'
+import New from './assets/new-icon.png'
+import Top from './assets/top-icon.png'
+import Rising from './assets/rising-icon.png'
+import Controversial from './assets/controversial-icon.png'
+
+const SortByModal = (props) => {
 
   return (
     <Modal 
@@ -29,7 +34,7 @@ const SortModal = (props) => {
             }}
             style={props.sortBy === 'Hot' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Images.hot} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Hot} resizeMode="cover" />
             <Text style={styles.sortByText}>Hot</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -40,7 +45,7 @@ const SortModal = (props) => {
             }}
             style={props.sortBy === 'New' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Images.new} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={New} resizeMode="cover" />
             <Text style={styles.sortByText}>New</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -51,7 +56,7 @@ const SortModal = (props) => {
             }}
             style={props.sortBy === 'Top' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Images.top} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Top} resizeMode="cover" />
             <Text style={styles.sortByText}>Top</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -62,7 +67,7 @@ const SortModal = (props) => {
             }}
             style={props.sortBy === 'Controversial' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Images.controversial} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Controversial} resizeMode="cover" />
             <Text style={styles.sortByText}>Controversial</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -73,7 +78,7 @@ const SortModal = (props) => {
             }}
             style={props.sortBy === 'Rising' ? [styles.sortByOption, styles.sortByOptionSelected] : styles.sortByOption}
           >
-            <Image style={styles.sortByImage} source={Images.rising} resizeMode="cover" />
+            <Image style={styles.sortByImage} source={Rising} resizeMode="cover" />
             <Text style={styles.sortByText}>Rising</Text>
           </TouchableOpacity>
           <TouchableOpacity  
@@ -90,4 +95,4 @@ const SortModal = (props) => {
   )
 }
 
-export default SortModal
+export default SortByModal

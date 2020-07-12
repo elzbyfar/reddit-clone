@@ -1,8 +1,12 @@
 import React from 'react';
 import { Modal, Image, View, Text, TouchableOpacity } from 'react-native';
 
-import styles from '../Styles/ViewModalStyles';
-import Images from '../Helpers/Images';
+import styles from './styles';
+// import Images from '../../Helpers/Images';
+
+import galleryView from './assets/gallery-view-icon.png'
+import classicView from './assets/classic-view-icon.png'
+import cardView from './assets/card-view-icon.png'
 
 const ViewModal = (props) => {
 
@@ -26,7 +30,7 @@ const ViewModal = (props) => {
           }}
             style={props.viewMode === 'Card' ? [styles.viewOption, styles.viewOptionSelected] : styles.viewOption}
           >
-            <Image style={styles.viewOptionImage} source={Images.cardView} resizeMode="cover" />
+            <Image style={styles.viewOptionImage} source={cardView} resizeMode="cover" />
             <Text style={styles.viewOptionText}>Card</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -37,7 +41,7 @@ const ViewModal = (props) => {
             }}
             style={props.viewMode === 'Classic' ? [styles.viewOption, styles.viewOptionSelected] : styles.viewOption}
           >
-            <Image style={styles.viewOptionImage} source={Images.classicView} resizeMode="cover" />
+            <Image style={styles.viewOptionImage} source={classicView} resizeMode="cover" />
             <Text style={styles.viewOptionText}>Classic</Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -48,7 +52,7 @@ const ViewModal = (props) => {
             }}
             style={props.viewMode === 'Media Gallery' ? [styles.viewOption, styles.viewOptionSelected] : styles.viewOption}
           >
-            <Image style={styles.viewOptionImage} source={Images.galleryView} resizeMode="cover" />
+            <Image style={styles.viewOptionImage} source={galleryView} resizeMode="cover" />
             <Text style={styles.viewOptionText}>Media Gallery</Text>
           </TouchableOpacity>
           <TouchableOpacity 
