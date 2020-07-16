@@ -7,7 +7,6 @@ const timeConverter = (utc) => {
   const day = hour * 24
   const year = day * 365
 
-
   if (Math.floor(diffInSeconds / year) > 0) {
     return `${Math.floor(diffInSeconds / year)}y`
   } 
